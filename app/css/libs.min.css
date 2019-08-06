@@ -4111,6 +4111,10 @@ header {
   color: #fff;
 }
 
+#tdl_1 tr td {
+  border: 2px solid #000;
+}
+
 .block {
   padding: 50px 0;
 }
