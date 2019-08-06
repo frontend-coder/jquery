@@ -65,7 +65,7 @@ $('footer').css({'height' : '400px'});
 $('#rez_one').css({'color' : '#fff', 'margin' : '10px 5px' });
 $('.nothin_wrap h4').css({'margin-bottom' : '20px'});
 let dataIdOut = $('.nothin_wrap h6').data('id');
-console.log(dataIdOut);
+//console.log(dataIdOut);
 let dataNameOut = $('.nothin_wrap h6').data('name');
 let myTime = $('.nothin_wrap h6').data('mytime');
 
@@ -83,7 +83,7 @@ $('.all_elev').css({'padding-left' : '40px', 'margin-top' : '40px', 'list-style'
 
   for (let elem of elements) {
   	document.querySelector("#all_elev_out").innerHTML = elem['textContent'] ;
-  	console.table(elem);
+  //	console.table(elem);
     //alert(elem.innerHTML); // "тест", "пройден"
   }
 
@@ -125,6 +125,49 @@ $("#new_block_firsr p:has('span')").css({'font-weight': '900', 'color': '#710B1D
 
 
 $("#tdl_1 tr td:parent").css({'background-color' : 'red', 'margin-top':'20px'});
+
+$('#first_button').click(function(){
+let rebTB = 'только что кликнули по соседке';
+document.querySelector("#rebtv").innerHTML = rebTB;
+document.querySelector("#second_button").innerHTML = rebTB;
+});
+
+$('#third_button').on('click', function(){
+let rebTB = 'только что кликнули еще раз по соседке';
+document.querySelector("#rebtv_tv").innerHTML = rebTB;
+document.querySelector("#fourth_button").innerHTML = rebTB;
+});
+
+
+$("#form_first").css({'margin-top' : '30px', 'border': '2px solid red'});
+$("input[name='prizma']").css({'margin' : '20px 10px', 'height' : '30px', 'border': '5px solid #eee'});
+
+$("input[name='prizma']").change(function(){
+const getVBalue = $(this).val(); // если пусту - забирает value тега
+$("input[name='submit']").val(getVBalue); // переменнная в скобках а значит передает переменную в обозначенный контейнер
+
+});
+
+
+$("input[name='prizma']").keyup(function(){
+const getVBalue = $(this).val(); // если пусту - забирает value тега
+$("input[name='submit']").val(getVBalue); // переменнная в скобках а значит передает переменную в обозначенный контейнер
+});
+
+$("#form_first").submit(function(){
+	const getSubmit = 'Cообщение отправлено!';
+$('#get_submit').val(getSubmit);
+
+});
+$("input[name='submit']").on('click', function(){
+	const getSubmit = 'Cообщение отправлено!';
+$('#get_submit').val(getSubmit);
+
+});
+
+
+/// https://www.youtube.com/watch?v=e5Oib9wkZHs
+//  44 минуты
 
 
 
