@@ -4,6 +4,7 @@
 /**
  * Use a better box model (opinionated).
  */
+@import url(../libs/plagins/font-awesome-4.7.0/css/font-awesome.min.css);
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -475,7 +476,7 @@ html {
   margin: 0;
   padding: 0;
   -webkit-backface-visibility: hidden;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 body {
@@ -489,16 +490,19 @@ body {
   color: #000000;
 }
 
-body input, body textarea {
+body input,
+body textarea {
   border: #666 1px solid;
   outline: none;
 }
 
-body input:focus:required:invalid, body textarea:focus:required:invalid {
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
   border-color: red;
 }
 
-body input:required:valid, body textarea:required:valid {
+body input:required:valid,
+body textarea:required:valid {
   border-color: green;
 }
 
@@ -512,9 +516,21 @@ body input:required:valid, body textarea:required:valid {
   width: 100%;
 }
 
-.header_fon {
-  background-color: red;
-  min-height: 600px;
+.header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 105vh;
+}
+
+.nav {
+  padding: 20px 0;
+  position: absolute;
+  z-index: 9;
+  background: #fff;
+  width: 100%;
+  left: 0;
+  margin-top: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -523,15 +539,287 @@ body input:required:valid, body textarea:required:valid {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: #000;
+}
+
+.nav ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
-header {
-  text-align: center;
+.nav ul li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav ul li.logo .black {
+  display: none;
+}
+
+.nav ul li.logo a {
+  margin: 0 4rem;
+}
+
+.nav ul li a {
+  font-size: 1.1em;
   color: #fff;
+  padding: 0.25rem 0;
+  margin: 0 1.8rem;
+  text-transform: uppercase;
+}
+
+.menu-up-lip {
+  top: -281px;
+  min-width: 100%;
+  left: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  position: fixed;
+}
+
+.menu-up-lip-down {
+  top: 0px;
+  margin-top: 0;
+}
+
+.full-nav .nav2 {
+  display: none;
+}
+
+@-webkit-keyframes animationFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+@keyframes animationFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+.buttons_hea {
+  margin-top: 20px;
+}
+
+.buttons_hea a {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #000;
+  color: red;
+  -webkit-animation: animationBorder 2s infinite;
+          animation: animationBorder 2s infinite;
+}
+
+@-webkit-keyframes animationBorder {
+  from {
+    -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  to {
+    -webkit-box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes animationBorder {
+  from {
+    -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  to {
+    -webkit-box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+.super_shapka {
+  background: url(../img/header-fon.jpg);
+  min-height: 700px;
+  background-size: cover;
+  background-position: 0 0;
+  -ms-clip-path: polygon(100% 0%, 100% 75%, 50% 100%, 0 75%, 0 0);
+  -webkit-clip-path: polygon(100% 0%, 100% 75%, 50% 100%, 0 75%, 0 0);
+          clip-path: polygon(100% 0%, 100% 75%, 50% 100%, 0 75%, 0 0);
+}
+
+.super_top {
+  height: 100px;
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.super_nav {
+  padding: 50px 0;
+  margin: 0;
+  background: #000;
+}
+
+.super_nav ul {
+  list-style-type: none;
+  position: relative;
+  float: left;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #1b3d53;
+  padding: 10px 30px;
+}
+
+.super_nav ul > li {
+  float: left;
+  position: relative;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1);
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.super_nav ul > li:first-child {
+  -webkit-box-shadow: -1px 0 0 rgba(0, 0, 0, 0.1), 1px 0 0 rgba(255, 255, 255, 0.25);
+          box-shadow: -1px 0 0 rgba(0, 0, 0, 0.1), 1px 0 0 rgba(255, 255, 255, 0.25);
+}
+
+.super_nav a {
+  display: block;
+  position: relative;
+  z-index: 10;
+  padding: 13px 20px;
+  text-decoration: none;
+  color: #fff;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 16px;
+  background: transparent;
+  -webkit-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.super_nav > li:hover > a {
+  background: #1b3d53;
+  color: #00dffc;
+  text-shadow: none;
+}
+
+.super_nav li ul {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 200px;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  -webkit-transform-origin: 50% 0%;
+      -ms-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+}
+
+.super_nav li:hover ul {
+  padding: 15px 0;
+  background-color: #1b3b33;
+  opacity: 1;
+  visibility: visible;
+  -webkit-box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+  -webkit-animation: swingdown 1s ease;
+          animation: swingdown 1s ease;
+  border-radius: 10px;
+}
+
+@-webkit-keyframes swingdown {
+  0% {
+    opacity: 0.99999;
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  30% {
+    -webkit-transform: rotateX(-20deg) rotateY(5deg);
+            transform: rotateX(-20deg) rotateY(5deg);
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  65% {
+    -webkit-transform: rotateX(20deg) rotateY(-3deg);
+            transform: rotateX(20deg) rotateY(-3deg);
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes swingdown {
+  0% {
+    opacity: 0.99999;
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  30% {
+    -webkit-transform: rotateX(-20deg) rotateY(5deg);
+            transform: rotateX(-20deg) rotateY(5deg);
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+  65% {
+    -webkit-transform: rotateX(20deg) rotateY(-3deg);
+            transform: rotateX(20deg) rotateY(-3deg);
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+  }
+}
+
+.super_nav li li a {
+  padding-left: 15px;
+  font-weight: 300;
+  color: #ddd;
+  text-shadow: none;
+  border-right: none;
+  border-top: dotted transparent;
+  border-bottom: dotted transparent;
+  -webkit-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+.super_nav li li a:hover {
+  color: #00dffc;
+  border-top: dotted 1px rgba(255, 255, 255, 0.15);
+  border-bottom: dotted 1px rgba(255, 255, 255, 0.15);
+  background: rgba(0, 223, 252, 0.02);
 }
 
 #tdl_1 tr td {
@@ -577,7 +865,7 @@ header {
   background-color: #fff;
   opacity: 0.9;
   display: none;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .cookie-block .ok {
@@ -587,6 +875,25 @@ header {
   padding-left: 5px;
   padding-right: 5px;
   cursor: pointer;
+}
+
+.block_counter_box {
+  padding: 40px 0;
+}
+
+.counter_wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.counter {
+  font-size: 2rem;
 }
 
 .block {

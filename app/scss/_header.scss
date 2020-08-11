@@ -1,44 +1,262 @@
-
-.header_fon {
-	background-color: red;
-	min-height: 600px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
+.header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 105vh;
 }
 
-header {
-	text-align: center;
-	color:#fff;
+.nav {
+  padding: 20px 0;
+  position: absolute;
+  z-index: 9;
+  background: #fff;
+  width: 100%;
+  left: 0;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  // width: 100%;
 
+  & ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & li {
+      display: flex;
+
+      &.logo .black {
+        display: none;
+      }
+
+      &.logo a {
+        margin: 0 4rem;
+      }
+
+      & a {
+        font-size: 1.1em;
+        color: #fff;
+        padding: 0.25rem 0;
+        margin: 0 1.8rem;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
+
+.menu-up-lip {
+  top: -281px;
+  min-width: 100%;
+  left: 0;
+  transition: 0.4s;
+  position: fixed;
+}
+
+.menu-up-lip-down {
+  top: 0px;
+  margin-top: 0;
+}
+
+.full-nav .nav2 {
+  display: none;
+}
+
+@keyframes animationFade {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    transform: translate(0, 0);
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+.buttons_hea {
+  margin-top: 20px;
+}
+
+.buttons_hea a {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #000;
+  color: red;
+  animation: animationBorder 2s infinite;
+  //	animation-fill-mode: both;
+  //animation-duration: 1s;
+}
+
+@keyframes animationBorder {
+  from {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+
+  to {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+// пробую написать многоуровневое меню
+
+.super_shapka {
+  background: url(../img/header-fon.jpg);
+  min-height: 700px;
+  background-size: cover;
+  background-position: 0 0;
+  // background-attachment: fixed;
+  -ms-clip-path: polygon(100% 0%, 100% 75%, 50% 100%, 0 75%, 0 0);
+  clip-path: polygon(100% 0%, 100% 75%, 50% 100%, 0 75%, 0 0);
+}
+
+.super_top {
+  height: 100px;
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.super_nav {
+  padding: 50px 0;
+  margin: 0;
+  background: #000;
+}
+
+.super_nav ul {
+  list-style-type: none;
+  position: relative;
+  float: left;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #1b3d53;
+  padding: 10px 30px;
+}
+
+.super_nav ul > li {
+  float: left;
+  position: relative;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1);
+  perspective: 1000px;
+}
+
+.super_nav ul > li:first-child {
+  box-shadow: -1px 0 0 rgba(0, 0, 0, 0.1), 1px 0 0 rgba(255, 255, 255, 0.25);
+}
+
+.super_nav a {
+  display: block;
+  position: relative;
+  z-index: 10;
+  padding: 13px 20px;
+  text-decoration: none;
+  color: #fff;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 16px;
+  background: transparent;
+  transition: all 0.25s ease-in;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.super_nav > li:hover > a {
+  background: #1b3d53;
+  color: rgba(0, 223, 252, 1);
+  text-shadow: none;
+}
+
+.super_nav li ul {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 200px;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transform-origin: 50% 0%;
+}
+
+.super_nav li:hover ul {
+  padding: 15px 0;
+  background-color: #1b3b33;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+  animation: swingdown 1s ease;
+  border-radius: 10px;
+}
+
+@keyframes swingdown {
+  0% {
+    opacity: 0.99999;
+    transform: rotateX(90deg);
+  }
+
+  30% {
+    transform: rotateX(-20deg) rotateY(5deg);
+    animation-timing-function: ease-in-out;
+  }
+
+  65% {
+    transform: rotateX(20deg) rotateY(-3deg);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.super_nav li li a {
+  padding-left: 15px;
+  font-weight: 300;
+  color: #ddd;
+  text-shadow: none;
+  border-right: none;
+  border-top: dotted transparent;
+  border-bottom: dotted transparent;
+  transition: all 0.15s linear;
+}
+
+.super_nav li li a:hover {
+  color: rgba(0, 223, 252, 1);
+  border-top: dotted 1px rgba(255, 255, 255, 0.15);
+  border-bottom: dotted 1px rgba(255, 255, 255, 0.15);
+  background: rgba(0, 223, 252, 0.02);
+}
+
+// конец пробую написать многоуровневое меню
+
 #tdl_1 tr td {
-	border:2px solid #000;
+  border: 2px solid #000;
 }
+
 .bocks_in > div {
-border:1px solid red;
+  border: 1px solid red;
 }
+
 .bocks_in > div .text_over {
-padding:110px;
+  padding: 110px;
 }
+
 .bocks_in > div:nth-child(3) h2 {
-padding:10px;
-background-color: #eee;
+  padding: 10px;
+  background-color: #eee;
 }
+
 .bocks_in > div:nth-child(3) .h4 {
-
 }
 
 .that_button {
-	display: inline-block;
-	border: 1px solid blue;
+  display: inline-block;
+  border: 1px solid blue;
 }
 
 .that_button {
-	display: inline-block;
-	padding:23px 80px;
+  display: inline-block;
+  padding: 23px 80px;
 }
+
 // .wrapper___linking {
 // 	margin-bottom :30px;
 // }
@@ -49,34 +267,40 @@ background-color: #eee;
 // }
 
 #box_box_three ul li {
-	font-size: 20px;
-	padding : 5px 15px;
-	color:red;
+  font-size: 20px;
+  padding: 5px 15px;
+  color: red;
 }
-
-
-
-
-
-
 
 .cookie-block {
-	position: fixed;
-	width:100%;
-	height: 50px;
-	bottom:0;
-	left:0;
-    border: 3px solid red;
-    background-color: #fff;
-    opacity:0.9;
- display: none;
-  font-size: .9rem;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  border: 3px solid red;
+  background-color: #fff;
+  opacity: 0.9;
+  display: none;
+  font-size: 0.9rem;
 }
+
 .cookie-block .ok {
-background-color: red;
-border:none;
-color:#fff;
-padding-left: 5px;
-padding-right: 5px;
-cursor: pointer;
+  background-color: red;
+  border: none;
+  color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.block_counter_box {
+  padding: 40px 0;
+}
+.counter_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.counter {
+  font-size: 2rem;
 }

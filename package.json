@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frontend-coder/startgulp4Lite.git"
+    "url": "git+https://github.com/frontend-coder/jquery.git"
   },
-  "author": "Олег Василенко",
+  "author": "Игорь Васильченко",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/frontend-coder/startgulp4Lite/issues"
+    "url": "https://github.com/frontend-coder/jquery/issues"
   },
-  "homepage": "https://github.com/frontend-coder/startgulp4Lite#readme",
+  "homepage": "https://github.com/frontend-coder/jquery#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",

@@ -52,7 +52,17 @@ gulp.task('styles', () => {
 gulp.task('scripts', done => {
 	var jsFiles = [
 'app/libs/plagins/jquery.min.js',
-'app/libs/plagins/cookie.min.js/cookie.min.js',
+'app/libs/plagins/cookie/cookie.min.js',
+'app/libs/plagins/waypoints/waypoints.min.js',
+'app/libs/plagins/counterup/jquery.counterup.min.js',
+
+
+
+
+
+
+
+
 'app/libs/common.js'
 // Always at the end
 ];

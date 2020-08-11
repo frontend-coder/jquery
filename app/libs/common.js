@@ -1,4 +1,139 @@
+
+
+  $(document).ready(function () {
+
+
+    let objToStick = $(".nav"); //Получаем нужный объект
+ //   var topOfObjToStick = $(objToStick).offset().top; //Получаем начальное расположение нашего блока
+
+    $(window).scroll(function () {
+      let windowScroll = $(window).scrollTop();//Получаем величину, показывающую на сколько прокручено окно
+      if (windowScroll > 250) { // Если прокрутили больше, чем расстояние до блока, то приклеиваем его
+      $(objToStick).addClass("menu-up-lip");
+       } else {
+     $(objToStick).removeClass("menu-up-lip");
+  };
+
+});
+  
+
+    
+  //  let objToStick = $(".nav"); //Получаем нужный объект
+ //   var topOfObjToStick = $(objToStick).offset().top; //Получаем начальное расположение нашего блока
+
+$(window).scroll(function () {
+  let windowScroll = $(window).scrollTop(); //Получаем величину, показывающую на сколько прокручено окно
+  if (windowScroll > window.innerHeight) { // Если прокрутили больше, чем расстояние до блока, то приклеиваем его
+  $(objToStick).addClass("menu-up-lip-down");
+} else {
+$(objToStick).removeClass("menu-up-lip-down");
+};
+
+});
+});
+
+
+
+
+// $(document).ready(function () {
+
+//   var objToStick = $(".nav"); //Получаем нужный объект
+//   var topOfObjToStick = $(objToStick).offset().top; //Получаем начальное расположение нашего блока
+//   $(window).scroll(function () {
+
+
+//     var windowScroll = $(window).scrollTop(); //Получаем величину, показывающую на сколько прокручено окно
+//     if (windowScroll > 200) { // Если прокрутили больше, чем расстояние до блока, то приклеиваем его
+//       $(objToStick).addClass("menu-up-lip");
+//       $(objToStick).addClass("menu-up-lip-down");
+
+//       // $('.ysm-search-widget').addClass("ysm-menu-verx-lip");
+//       // $('#toptop').addClass("toptop-act");
+//     } else {
+//       $(objToStick).removeClass("menu-up-lip");
+//       $(objToStick).removeClass("menu-up-lip-down");
+
+//       // $('#toptop').removeClass("toptop-act");
+//       // $('.ysm-search-widget').removeClass("ysm-menu-verx-lip");
+//     };
+//   });
+
+
+// });
+
+
+
+
+
+
+
+
 $(document).ready(function() {
+
+
+  $(".nav-icon").click(function () {
+    $(".full-nav").addClass("open");
+    
+  });
+
+  $(".nav-close").click(function () {
+    $(".full-nav").removeClass("open");
+
+  });
+
+
+  // $(window).scroll(function () {
+  //   let sc = $(window).scrollTop();
+  //   console.info(sc);
+  //   if (sc > 300) { 
+  //     $(".nav").addClass('sticky');
+  //   } else {
+  //     $(".nav").removeClass('sticky');
+    
+  //   }
+  
+  // });
+
+  // $(function () {
+  //   var element = $(".nav"), display;
+  //   $(window).scroll(function () {
+  //     display = $(this).scrollTop() >= 250;
+  //     display != element.css('opacity') && element.stop().animate({ 'opacity': display }, 500);
+  //   });
+  // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // 	$("body").niceScroll({
   // horizrailenabled                        : false
   // });
@@ -315,31 +450,30 @@ $(document).ready(function() {
     .css({ margin: '10px', padding: '10px', border: '10px solid orange' });
 });
 
-$('#basic_prev')
-  .next()
-  .next()
-  .next()
-  .css({ margin: '10px', padding: '10px', border: '10px solid orange' });
-});
+// $('#basic_prev')
+//   .next()
+//   .next()
+//   .next()
+//   .css({ margin: '10px', padding: '10px', border: '10px solid orange' });
+//});
 $('#basic_prev')
   .prev('h3')
   .css({ margin: '10px', padding: '10px', border: '10px solid orange' });
-});
+
 
 $('#basic_prev')
   .next('h2')
    .css({ margin: '10px', padding: '10px', border: '10px solid orange' });
-});
 
 $('#basic_prev')
   .siblings()
   .css({ margin: '10px' });
-});
+
 //выбор всех соседей на одном уровне
 $('#basic_prev')
   .siblings('.green')
   .css({ margin: '10px' });
-});
+
 
 // // выборка селекторов с помощью jquery
 // $('.block').css({'padding' : '30px 0'});
