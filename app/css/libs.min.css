@@ -945,6 +945,16 @@ body textarea:required:valid {
   color: orange;
 }
 
+.test_menu {
+  min-height: 100vh;
+  background-color: red;
+}
+
+.top___lines {
+  background-color: #000;
+  height: 100px;
+}
+
 /*==========  Desktop First  ==========*/
 @media screen and (max-width: 1080px) {
   /* делать это разрешение */
